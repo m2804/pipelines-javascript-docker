@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: mpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: mpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: mpipelinesjavascriptdocker 
+          image: my123containerregistry.azurecr.io/mpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
